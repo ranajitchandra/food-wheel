@@ -1,0 +1,842 @@
+[
+  {
+    "id": 1,
+    "restaurant": {
+      "name": "El Corazón Tacos",
+      "cuisine": "Mexican",
+      "distance": "0.4 miles",
+      "isOnline": false,
+      "price_range": "$",
+      "address": "567 Fiesta Ave, Mission District",
+      "rating": {
+        "score": 4.6,
+        "review_count": 298
+      }
+    },
+    "delivery_options": [
+      {
+        "provider": "DoorDash",
+        "available": false,
+        "delivery_time": "15-25 min"
+      },
+      {
+        "provider": "Uber Eats",
+        "available": true,
+        "delivery_time": "20-30 min"
+      },
+      {
+        "provider": "Grubhub",
+        "available": false,
+        "delivery_time": "25-35 min"
+      },
+      {
+        "provider": "Wolt",
+        "available": true,
+        "delivery_time": "18-28 min"
+      },
+      {
+        "provider": "Caviar",
+        "available": false,
+        "delivery_time": "22-32 min"
+      }
+    ],
+    "additional_options": "+2 more options",
+    "actions": ["Compare Menus & Prices", "Book Table", "Directions"],
+    "delivery_fees": [
+      {
+        "provider": "DoorDash",
+        "fee": "$1.49"
+      },
+      {
+        "provider": "Uber Eats",
+        "fee": "$1.99"
+      },
+      {
+        "provider": "Grubhub",
+        "fee": "$2.99"
+      },
+      {
+        "provider": "Wolt",
+        "fee": "$1.79"
+      },
+      {
+        "provider": "Caviar",
+        "fee": "$2.49"
+      }
+    ],
+    "menu_comparison": {
+      "providers": ["DoorDash", "Uber Eats", "Grubhub", "Wolt", "Caviar"],
+      "menu_items": [
+        {
+          "name": "Carne Asada Tacos",
+          "description": "3 grilled steak tacos with onions & cilantro",
+          "category": "Tacos",
+          "prices": {
+            "DoorDash": "$12.99",
+            "Uber Eats": "$13.50",
+            "Grubhub": "$11.99",
+            "Wolt": "$12.75",
+            "Caviar": "$13.25"
+          },
+          "offers": {
+            "Uber Eats": "$5 off $25+",
+            "Wolt": "Free chips & salsa",
+            "DoorDash": "20% off first order"
+          }
+        },
+        {
+          "name": "Chicken Quesadilla",
+          "description": "Large flour tortilla with cheese & chicken",
+          "category": "Quesadillas",
+          "prices": {
+            "DoorDash": "$10.99",
+            "Uber Eats": "$11.25",
+            "Grubhub": "$9.99",
+            "Wolt": "$10.50",
+            "Caviar": "$11.00"
+          },
+          "offers": {
+            "Grubhub": "BOGO 50% off",
+            "Caviar": "Free guacamole"
+          }
+        },
+        {
+          "name": "Guacamole & Chips",
+          "description": "Fresh avocado dip with tortilla chips",
+          "category": "Appetizers",
+          "prices": {
+            "DoorDash": "$8.99",
+            "Uber Eats": "$9.25",
+            "Grubhub": "$7.99",
+            "Wolt": "$8.75",
+            "Caviar": "$9.00"
+          },
+          "offers": {
+            "Wolt": "Free delivery $20+",
+            "Uber Eats": "$3 off appetizers"
+          }
+        },
+        {
+          "name": "Bean & Cheese Burrito",
+          "description": "Large burrito with refried beans & cheese",
+          "category": "Burritos",
+          "prices": {
+            "DoorDash": "$9.99",
+            "Uber Eats": "$10.50",
+            "Grubhub": "$8.99",
+            "Wolt": "$9.75",
+            "Caviar": "$10.25"
+          },
+          "offers": {
+            "Grubhub": "Free delivery",
+            "DoorDash": "Burrito combo $12"
+          }
+        },
+        {
+          "name": "Horchata",
+          "description": "Traditional rice milk drink with cinnamon",
+          "category": "Beverages",
+          "prices": {
+            "DoorDash": "$4.50",
+            "Uber Eats": "$4.75",
+            "Grubhub": "$4.25",
+            "Wolt": "$4.60",
+            "Caviar": "$4.85"
+          },
+          "offers": {
+            "Caviar": "Free with entree",
+            "Uber Eats": "50% off drinks"
+          }
+        },
+        {
+          "name": "Churros",
+          "description": "Fried dough pastry with cinnamon sugar",
+          "category": "Desserts",
+          "prices": {
+            "DoorDash": "$6.99",
+            "Uber Eats": "$7.25",
+            "Grubhub": "$6.50",
+            "Wolt": "$6.85",
+            "Caviar": "$7.10"
+          },
+          "offers": {
+            "Wolt": "Free with $30+ order",
+            "Grubhub": "Dessert bundle 15% off"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "restaurant": {
+      "name": "Dragon Palace",
+      "cuisine": "Thai",
+      "distance": "1.2 miles",
+      "isOnline": true,
+      "price_range": "$$",
+      "address": "234 Chinatown St, Downtown",
+      "rating": {
+        "score": 4.3,
+        "review_count": 412
+      }
+    },
+    "delivery_options": [
+      {
+        "provider": "DoorDash",
+        "available": true,
+        "delivery_time": "25-35 min"
+      },
+      {
+        "provider": "Uber Eats",
+        "available": true,
+        "delivery_time": "20-30 min"
+      },
+      {
+        "provider": "Grubhub",
+        "available": true,
+        "delivery_time": "30-40 min"
+      },
+      {
+        "provider": "Wolt",
+        "available": true,
+        "delivery_time": "22-32 min"
+      },
+      {
+        "provider": "Caviar",
+        "available": false,
+        "delivery_time": "28-38 min"
+      }
+    ],
+    "additional_options": "+1 more option",
+    "actions": ["Compare Menus & Prices", "Book Table", "Directions"],
+    "delivery_fees": [
+      {
+        "provider": "DoorDash",
+        "fee": "$2.99"
+      },
+      {
+        "provider": "Uber Eats",
+        "fee": "$1.99"
+      },
+      {
+        "provider": "Grubhub",
+        "fee": "$3.49"
+      },
+      {
+        "provider": "Wolt",
+        "fee": "$2.49"
+      },
+      {
+        "provider": "Caviar",
+        "fee": "$3.25"
+      }
+    ],
+    "menu_comparison": {
+      "providers": ["DoorDash", "Uber Eats", "Grubhub", "Wolt", "Caviar"],
+      "menu_items": [
+        {
+          "name": "Kung Pao Chicken",
+          "description": "Spicy stir-fry with peanuts and vegetables",
+          "category": "Main Course",
+          "prices": {
+            "DoorDash": "$14.99",
+            "Uber Eats": "$15.50",
+            "Grubhub": "$13.99",
+            "Wolt": "$14.75",
+            "Caviar": "$15.25"
+          },
+          "offers": {
+            "DoorDash": "Free delivery",
+            "Uber Eats": "$8 off $35+",
+            "Wolt": "Family meal 20% off"
+          }
+        },
+        {
+          "name": "Beef Lo Mein",
+          "description": "Stir-fried noodles with beef and vegetables",
+          "category": "Noodles",
+          "prices": {
+            "DoorDash": "",
+            "Uber Eats": "$13.25",
+            "Grubhub": "$11.99",
+            "Wolt": "$12.50",
+            "Caviar": "$13.00"
+          },
+          "offers": {
+            "Grubhub": "Noodle combo $15",
+            "Caviar": "Free spring rolls"
+          }
+        },
+        {
+          "name": "Spring Rolls",
+          "description": "Crispy vegetable rolls with sweet sauce",
+          "category": "Appetizers",
+          "prices": {
+            "DoorDash": "$6.99",
+            "Uber Eats": "$7.25",
+            "Grubhub": "$6.50",
+            "Wolt": "$6.85",
+            "Caviar": "$7.10"
+          },
+          "offers": {
+            "Wolt": "3 for $15",
+            "DoorDash": "Free with $25+"
+          }
+        },
+        {
+          "name": "Fried Rice",
+          "description": "Wok-fried rice with eggs and vegetables",
+          "category": "Rice",
+          "prices": {
+            "DoorDash": "$10.99",
+            "Uber Eats": "",
+            "Grubhub": "$9.99",
+            "Wolt": "$10.75",
+            "Caviar": "$11.25"
+          },
+          "offers": {
+            "Uber Eats": "15% off rice",
+            "Grubhub": "Free extra portion"
+          }
+        },
+        {
+          "name": "Hot & Sour Soup",
+          "description": "Spicy and tangy traditional soup",
+          "category": "Soups",
+          "prices": {
+            "DoorDash": "$5.99",
+            "Uber Eats": "",
+            "Grubhub": "$5.50",
+            "Wolt": "$5.85",
+            "Caviar": "$6.10"
+          },
+          "offers": {
+            "Caviar": "Free with entree",
+            "Wolt": "Soup & appetizer $10"
+          }
+        },
+        {
+          "name": "Mango Pudding",
+          "description": "Sweet mango flavored dessert",
+          "category": "Desserts",
+          "prices": {
+            "DoorDash": "$4.99",
+            "Uber Eats": "$5.25",
+            "Grubhub": "$4.50",
+            "Wolt": "$4.85",
+            "Caviar": "$5.10"
+          },
+          "offers": {
+            "Grubhub": "Free dessert Friday",
+            "DoorDash": "Dessert $3 with meal"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "restaurant": {
+      "name": "Burger Junction",
+      "cuisine": "American",
+      "distance": "0.8 miles",
+      "isOnline": true,
+      "price_range": "$",
+      "address": "789 Main St, City Center",
+      "rating": {
+        "score": 4.1,
+        "review_count": 156
+      }
+    },
+    "delivery_options": [
+      {
+        "provider": "DoorDash",
+        "available": true,
+        "delivery_time": "15-25 min"
+      },
+      {
+        "provider": "Uber Eats",
+        "available": false,
+        "delivery_time": "20-30 min"
+      },
+      {
+        "provider": "Grubhub",
+        "available": true,
+        "delivery_time": "18-28 min"
+      },
+      {
+        "provider": "Wolt",
+        "available": true,
+        "delivery_time": "16-26 min"
+      },
+      {
+        "provider": "Caviar",
+        "available": false,
+        "delivery_time": "19-29 min"
+      }
+    ],
+    "additional_options": "+3 more options",
+    "actions": ["Compare Menus & Prices", "Book Table", "Directions"],
+    "delivery_fees": [
+      {
+        "provider": "DoorDash",
+        "fee": "$0.99"
+      },
+      {
+        "provider": "Uber Eats",
+        "fee": "$1.49"
+      },
+      {
+        "provider": "Grubhub",
+        "fee": "$1.99"
+      },
+      {
+        "provider": "Wolt",
+        "fee": "$1.29"
+      },
+      {
+        "provider": "Caviar",
+        "fee": "$1.79"
+      }
+    ],
+    "menu_comparison": {
+      "providers": ["DoorDash", "Uber Eats", "Grubhub", "Wolt", "Caviar"],
+      "menu_items": [
+        {
+          "name": "Classic Cheeseburger",
+          "description": "Beef patty with cheese, lettuce, tomato, and special sauce",
+          "category": "Burgers",
+          "prices": {
+            "DoorDash": "$9.99",
+            "Uber Eats": "",
+            "Grubhub": "$8.99",
+            "Wolt": "$9.75",
+            "Caviar": "$10.25"
+          },
+          "offers": {
+            "Grubhub": "20% off first order",
+            "DoorDash": "Burger combo $12",
+            "Wolt": "Double burger $14"
+          }
+        },
+        {
+          "name": "Bacon Burger",
+          "description": "With crispy bacon, cheese, and special sauce",
+          "category": "Burgers",
+          "prices": {
+            "DoorDash": "$11.99",
+            "Uber Eats": "$12.25",
+            "Grubhub": "$10.99",
+            "Wolt": "$11.50",
+            "Caviar": "$12.00"
+          },
+          "offers": {
+            "Uber Eats": "Free extra bacon",
+            "Caviar": "Premium bundle $18"
+          }
+        },
+        {
+          "name": "French Fries",
+          "description": "Crispy golden fries with sea salt",
+          "category": "Sides",
+          "prices": {
+            "DoorDash": "$3.99",
+            "Uber Eats": "",
+            "Grubhub": "$3.50",
+            "Wolt": "$3.85",
+            "Caviar": "$4.10"
+          },
+          "offers": {
+            "Wolt": "Free fries with burger",
+            "Grubhub": "Fries + drink $5"
+          }
+        },
+        {
+          "name": "Onion Rings",
+          "description": "Beer-battered onion rings",
+          "category": "Sides",
+          "prices": {
+            "DoorDash": "$4.99",
+            "Uber Eats": "$5.25",
+            "Grubhub": "",
+            "Wolt": "$4.85",
+            "Caviar": "$5.10"
+          },
+          "offers": {
+            "DoorDash": "2 for $7",
+            "Uber Eats": "Free side $20+"
+          }
+        },
+        {
+          "name": "Chocolate Shake",
+          "description": "Creamy chocolate milkshake",
+          "category": "Beverages",
+          "prices": {
+            "DoorDash": "$5.99",
+            "Uber Eats": "$6.25",
+            "Grubhub": "$5.50",
+            "Wolt": "$5.85",
+            "Caviar": "$6.10"
+          },
+          "offers": {
+            "Caviar": "Free shake Friday",
+            "Wolt": "Shake + pie $9"
+          }
+        },
+        {
+          "name": "Apple Pie",
+          "description": "Warm apple pie with cinnamon",
+          "category": "Desserts",
+          "prices": {
+            "DoorDash": "$4.99",
+            "Uber Eats": "$5.25",
+            "Grubhub": "",
+            "Wolt": "$4.85",
+            "Caviar": "$5.10"
+          },
+          "offers": {
+            "Grubhub": "Free with family meal",
+            "DoorDash": "Dessert $3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "restaurant": {
+      "name": "Sushi Zen",
+      "cuisine": "French",
+      "distance": "2.1 miles",
+      "isOnline": true,
+      "price_range": "$$$",
+      "address": "456 Sakura Blvd, East Side",
+      "rating": {
+        "score": 4.7,
+        "review_count": 523
+      }
+    },
+    "delivery_options": [
+      {
+        "provider": "DoorDash",
+        "available": true,
+        "delivery_time": "30-40 min"
+      },
+      {
+        "provider": "Uber Eats",
+        "available": true,
+        "delivery_time": "25-35 min"
+      },
+      {
+        "provider": "Grubhub",
+        "available": false,
+        "delivery_time": "35-45 min"
+      },
+      {
+        "provider": "Wolt",
+        "available": true,
+        "delivery_time": "28-38 min"
+      },
+      {
+        "provider": "Caviar",
+        "available": true,
+        "delivery_time": "32-42 min"
+      }
+    ],
+    "additional_options": "+2 more options",
+    "actions": ["Compare Menus & Prices", "Book Table", "Directions"],
+    "delivery_fees": [
+      {
+        "provider": "DoorDash",
+        "fee": "$3.99"
+      },
+      {
+        "provider": "Uber Eats",
+        "fee": "$4.49"
+      },
+      {
+        "provider": "Grubhub",
+        "fee": "$3.49"
+      },
+      {
+        "provider": "Wolt",
+        "fee": "$3.79"
+      },
+      {
+        "provider": "Caviar",
+        "fee": "$4.25"
+      }
+    ],
+    "menu_comparison": {
+      "providers": ["DoorDash", "Uber Eats", "Grubhub", "Wolt", "Caviar"],
+      "menu_items": [
+        {
+          "name": "California Roll",
+          "description": "Crab, avocado, cucumber with sesame seeds",
+          "category": "Sushi Rolls",
+          "prices": {
+            "DoorDash": "$8.99",
+            "Uber Eats": "$9.25",
+            "Grubhub": "$8.50",
+            "Wolt": "$8.85",
+            "Caviar": "$9.10"
+          },
+          "offers": {
+            "Wolt": "3 rolls $22",
+            "DoorDash": "Free soup with rolls"
+          }
+        },
+        {
+          "name": "Salmon Nigiri",
+          "description": "Fresh salmon over seasoned rice",
+          "category": "Nigiri",
+          "prices": {
+            "DoorDash": "",
+            "Uber Eats": "$6.75",
+            "Grubhub": "$6.25",
+            "Wolt": "$6.60",
+            "Caviar": "$6.85"
+          },
+          "offers": {
+            "Uber Eats": "$10 off $40+",
+            "Caviar": "Nigiri platter $25",
+            "Grubhub": "Free extra piece"
+          }
+        },
+        {
+          "name": "Spicy Tuna Roll",
+          "description": "Tuna with spicy mayo and cucumber",
+          "category": "Sushi Rolls",
+          "prices": {
+            "DoorDash": "$9.99",
+            "Uber Eats": "",
+            "Grubhub": "$9.50",
+            "Wolt": "$9.85",
+            "Caviar": "$10.10"
+          },
+          "offers": {
+            "DoorDash": "Spicy roll bundle 15% off",
+            "Uber Eats": "Free edamame"
+          }
+        },
+        {
+          "name": "Miso Soup",
+          "description": "Traditional Japanese soybean soup",
+          "category": "Soups",
+          "prices": {
+            "DoorDash": "$3.50",
+            "Uber Eats": "$3.75",
+            "Grubhub": "$3.25",
+            "Wolt": "$3.60",
+            "Caviar": "$3.85"
+          },
+          "offers": {
+            "Wolt": "Free soup $30+",
+            "Grubhub": "Soup & salad $8"
+          }
+        },
+        {
+          "name": "Edamame",
+          "description": "Steamed soybeans with sea salt",
+          "category": "Appetizers",
+          "prices": {
+            "DoorDash": "$5.99",
+            "Uber Eats": "",
+            "Grubhub": "$5.50",
+            "Wolt": "$5.85",
+            "Caviar": "$6.10"
+          },
+          "offers": {
+            "Caviar": "Free edamame Tuesday",
+            "DoorDash": "Appetizer sampler $12"
+          }
+        },
+        {
+          "name": "Green Tea Ice Cream",
+          "description": "Traditional matcha flavored ice cream",
+          "category": "Desserts",
+          "prices": {
+            "DoorDash": "$6.50",
+            "Uber Eats": "$6.75",
+            "Grubhub": "$6.25",
+            "Wolt": "$6.60",
+            "Caviar": "$6.85"
+          },
+          "offers": {
+            "Uber Eats": "Free dessert family meal",
+            "Wolt": "Ice cream duo $10"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "restaurant": {
+      "name": "Mama's Kitchen",
+      "cuisine": "Greek",
+      "distance": "1.5 miles",
+      "isOnline": false,
+      "price_range": "$$",
+      "address": "123 Pasta St, Little Italy",
+      "rating": {
+        "score": 4.4,
+        "review_count": 287
+      }
+    },
+    "delivery_options": [
+      {
+        "provider": "DoorDash",
+        "available": false,
+        "delivery_time": "20-30 min"
+      },
+      {
+        "provider": "Uber Eats",
+        "available": true,
+        "delivery_time": "25-35 min"
+      },
+      {
+        "provider": "Grubhub",
+        "available": true,
+        "delivery_time": "22-32 min"
+      },
+      {
+        "provider": "Wolt",
+        "available": false,
+        "delivery_time": "24-34 min"
+      },
+      {
+        "provider": "Caviar",
+        "available": true,
+        "delivery_time": "26-36 min"
+      }
+    ],
+    "additional_options": "+1 more option",
+    "actions": ["Compare Menus & Prices", "Book Table", "Directions"],
+    "delivery_fees": [
+      {
+        "provider": "DoorDash",
+        "fee": "$2.49"
+      },
+      {
+        "provider": "Uber Eats",
+        "fee": "$1.99"
+      },
+      {
+        "provider": "Grubhub",
+        "fee": "$2.99"
+      },
+      {
+        "provider": "Wolt",
+        "fee": "$2.25"
+      },
+      {
+        "provider": "Caviar",
+        "fee": "$2.75"
+      }
+    ],
+    "menu_comparison": {
+      "providers": ["DoorDash", "Uber Eats", "Grubhub", "Wolt", "Caviar"],
+      "menu_items": [
+        {
+          "name": "Spaghetti Carbonara",
+          "description": "Creamy pasta with pancetta and eggs",
+          "category": "Pasta",
+          "prices": {
+            "DoorDash": "$16.99",
+            "Uber Eats": "",
+            "Grubhub": "$15.99",
+            "Wolt": "$16.75",
+            "Caviar": "$17.25"
+          },
+          "offers": {
+            "Uber Eats": "Pasta night 20% off",
+            "Caviar": "Free garlic bread"
+          }
+        },
+        {
+          "name": "Chicken Parmesan",
+          "description": "Breaded chicken with marinara and mozzarella",
+          "category": "Main Course",
+          "prices": {
+            "DoorDash": "$18.99",
+            "Uber Eats": "",
+            "Grubhub": "$17.99",
+            "Wolt": "",
+            "Caviar": "$19.00"
+          },
+          "offers": {
+            "Grubhub": "Free delivery $25+",
+            "DoorDash": "Family meal $35",
+            "Wolt": "Extra cheese free"
+          }
+        },
+        {
+          "name": "Garlic Bread",
+          "description": "Toasted bread with garlic butter",
+          "category": "Appetizers",
+          "prices": {
+            "DoorDash": "$6.99",
+            "Uber Eats": "$7.25",
+            "Grubhub": "",
+            "Wolt": "$6.85",
+            "Caviar": "$7.10"
+          },
+          "offers": {
+            "Wolt": "Free with $30+",
+            "Uber Eats": "Bread basket $10"
+          }
+        },
+        {
+          "name": "Caesar Salad",
+          "description": "Romaine lettuce with parmesan and croutons",
+          "category": "Salads",
+          "prices": {
+            "DoorDash": "",
+            "Uber Eats": "$10.50",
+            "Grubhub": "$9.50",
+            "Wolt": "$9.85",
+            "Caviar": ""
+          },
+          "offers": {
+            "Grubhub": "Salad + soup $12",
+            "Caviar": "Free extra dressing"
+          }
+        },
+        {
+          "name": "Tiramisu",
+          "description": "Classic Italian coffee-flavored dessert",
+          "category": "Desserts",
+          "prices": {
+            "DoorDash": "$8.99",
+            "Uber Eats": "",
+            "Grubhub": "$8.50",
+            "Wolt": "$8.85",
+            "Caviar": "$9.10"
+          },
+          "offers": {
+            "DoorDash": "Dessert trio $18",
+            "Uber Eats": "Free tiramisu Thursday"
+          }
+        },
+        {
+          "name": "House Wine",
+          "description": "Glass of red or white house wine",
+          "category": "Beverages",
+          "prices": {
+            "DoorDash": "$7.99",
+            "Uber Eats": "$8.25",
+            "Grubhub": "$7.50",
+            "Wolt": "$7.85",
+            "Caviar": "$8.10"
+          },
+          "offers": {
+            "Caviar": "Wine pairing $12",
+            "Grubhub": "Free wine with pasta"
+          }
+        }
+      ]
+    }
+  }
+]
