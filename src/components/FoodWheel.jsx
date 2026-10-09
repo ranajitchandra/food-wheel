@@ -107,11 +107,6 @@ const FoodWheel = ({ getValue }) => {
         <div className="flex flex-col items-center sm:p-8 font-sans">
             {/* Wheel Container */}
             <div className="relative w-full max-w-lg aspect-square">
-                {/* Top Pointer Indicator Arrow pointing at top center of wheel */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-40 pointer-events-none">
-                    <div className="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[28px] border-t-orange-600 drop-shadow-md"></div>
-                </div>
-
                 {/* Wheel Background */}
                 <div
                     className="relative w-full h-full rounded-full overflow-hidden border-8 md:border-12 border-[#FFDCC3] shadow-2xl z-10"
@@ -207,7 +202,7 @@ const FoodWheel = ({ getValue }) => {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     className="mt-6 text-lg lg:text-2xl font-black text-orange-600 bg-orange-100/70 border border-orange-300 px-6 py-2 rounded-full shadow-sm"
                 >
-                    🎉 You got: <span className="underline decoration-orange-500">{prize}</span>!
+                    🎉 You got: <span>{prize}</span>!
                 </motion.p>
             )}
         </div>
