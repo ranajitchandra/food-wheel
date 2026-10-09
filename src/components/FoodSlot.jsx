@@ -65,7 +65,7 @@ export default function FoodSlot({ setSpinValue }) {
                         <motion.div
                             animate={{ y }}
                             transition={{ duration: 2.5, ease: [0.25, 0.1, 0.25, 1] }}
-                            classyxName="flex flex-col text-center"
+                            className="flex flex-col text-center"
                             onAnimationComplete={() => {
                                 const remainder = y % (TOTAL_ITEMS * ITEM_HEIGHT);
                                 console.log(remainder);
