@@ -138,14 +138,17 @@ const FoodWheel = ({ getValue }) => {
                                         }}
                                     />
 
-                                    {/* Image & Label container centered in slice */}
+                                    {/* Image & Label container centered in slice (always upright: top image, bottom name) */}
                                     <div
                                         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
                                         style={{
-                                            transform: `rotate(${centerAngle}deg) translateY(-34%) rotate(-${centerAngle}deg)`,
+                                            transform: `rotate(${centerAngle}deg) translateY(-34%) rotate(-${centerAngle + rotation}deg)`,
+                                            transition: mustSpin
+                                                ? `transform ${SPIN_DURATION_MS / 1000}s cubic-bezier(0.15, 0.9, 0.2, 1)`
+                                                : "none",
                                         }}
                                     >
-                                        <div className="flex flex-col items-center justify-center">
+                                        <div className="flex flex-col items-center justify-center text-center">
                                             <img
                                                 src={segment.image}
                                                 alt={segment.option}
