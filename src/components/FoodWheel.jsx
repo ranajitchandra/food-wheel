@@ -1,8 +1,5 @@
-console.clear();
-
-
 import { useState, useMemo, useEffect } from "react";
-import { motion } from "framer-motion"; //eslint-disable-line
+import { motion } from "framer-motion";
 import frenchImage from "../assets/wheelImages/French.png";
 import indianImage from "../assets/wheelImages/indian.png";
 import thaiImage from "../assets/wheelImages/Thai.png";
@@ -13,116 +10,94 @@ import { FaPlay, FaRedo } from "react-icons/fa";
 import CommonButton from "../common/CommonButton";
 import pointer from "../assets/pointer/pointer.png";
 
-
 const data = [
     {
         option: "Indian",
         color: "rgba(108, 92, 231, 1)",
         image: indianImage,
-        textColor: "rgba(34, 34, 34, 1)",
+        textColor: "#ffffff",
     },
     {
         option: "French",
         color: "rgba(162, 155, 254, 1)",
         image: frenchImage,
-        textColor: "rgba(34, 34, 34, 1)",
+        textColor: "#1a1a1a",
     },
     {
         option: "Thai",
         color: "rgba(253, 94, 94, 1)",
         image: thaiImage,
-        textColor: "rgba(34, 34, 34, 1)",
+        textColor: "#ffffff",
     },
     {
         option: "Greek",
         color: "rgba(255, 188, 3, 1)",
         image: greekImage,
-        textColor: "rgba(34, 34, 34, 1)",
+        textColor: "#1a1a1a",
     },
     {
         option: "Mexican",
         color: "rgba(240, 147, 43, 1)",
         image: mexicanImage,
-        textColor: "rgba(34, 34, 34, 1)",
+        textColor: "#ffffff",
     },
     {
         option: "American",
         color: "rgba(230, 58, 55, 1)",
         image: americanImage,
-        textColor: "rgba(34, 34, 34, 1)",
+        textColor: "#ffffff",
     },
 ];
 
 const SEGMENT_COUNT = 6;
 const SEGMENT_ANGLE = 360 / SEGMENT_COUNT;
-const MIN_SPINS = 12;
-const SPIN_DURATION_MS = 8000;
-
+const MIN_SPINS = 10;
+const SPIN_DURATION_MS = 5000;
 
 const FoodWheel = ({ getValue }) => {
     const [mustSpin, setMustSpin] = useState(false);
     const [rotation, setRotation] = useState(0);
     const [prize, setPrize] = useState("");
     const [hasSpin, setHasSpin] = useState(false);
-    const [translateYValue, setTranslateYValue] = useState(getTranslateY());
-
 
     useEffect(() => {
-        if (prize) {
+        if (prize && getValue) {
             getValue(prize);
         }
     }, [prize, getValue]);
 
-
-
-
-    function getTranslateY() {
-        if (window.innerWidth >= 1024) return 210;
-        if (window.innerWidth >= 768) return 200;
-        if (window.innerWidth >= 425) return 120;
-        if (window.innerWidth >= 375) return 140;
-        return 165;
-    }
-
-    // Update translateY when window resizes
-    useEffect(() => {
-
-        const handleResize = () => setTranslateYValue(getTranslateY());
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    const [spinCount, setSpinCount] = useState(0);
-
     const handleSpin = () => {
         if (mustSpin) return;
 
-        const winnerIndex = Math.floor(Math.random() * SEGMENT_COUNT);
-        let rotateTo = MIN_SPINS * 360 + (360 - (winnerIndex * SEGMENT_ANGLE + SEGMENT_ANGLE / 2));
+        // Select winning segment index (0 to 5)
+        const winningIndex = Math.floor(Math.random() * SEGMENT_COUNT);
+        const winnerObj = data[winningIndex];
 
+        // Target angle to align center of winning slice with TOP pointer (0deg / 12 o'clock)
+        const sliceCenterAngle = winningIndex * SEGMENT_ANGLE + SEGMENT_ANGLE / 2;
+        const targetAngle = (360 - sliceCenterAngle) % 360;
 
+        const currentNormalized = rotation % 360;
+        let degreesNeeded = (targetAngle - currentNormalized + 360) % 360;
+        if (degreesNeeded === 0) degreesNeeded = 360;
 
-        setRotation((prev) => prev + rotateTo);
+        const nextRotation = rotation + MIN_SPINS * 360 + degreesNeeded;
+
+        setRotation(nextRotation);
         setMustSpin(true);
         setHasSpin(true);
 
         setTimeout(() => {
             setMustSpin(false);
-            const finalRotation = (rotation + rotateTo) % 360;
-
-            const actualWinnerIndex =
-                SEGMENT_COUNT - 1 - Math.floor(finalRotation / SEGMENT_ANGLE);
-            setPrize(data[actualWinnerIndex].option);
-
+            setPrize(winnerObj.option);
         }, SPIN_DURATION_MS);
-
     };
 
     const wheelStyle = useMemo(
         () => ({
             transform: `rotate(${rotation}deg)`,
             transition: mustSpin
-                ? `transform ${SPIN_DURATION_MS / 1000}s cubic-bezier(0.1,0.7,0.4,1)`
+                ? `transform ${SPIN_DURATION_MS / 1000}s cubic-bezier(0.15, 0.9, 0.2, 1)`
                 : "none",
         }),
         [rotation, mustSpin]
@@ -132,67 +107,71 @@ const FoodWheel = ({ getValue }) => {
         <div className="flex flex-col items-center sm:p-8 font-sans">
             {/* Wheel Container */}
             <div className="relative w-full max-w-lg aspect-square">
+                {/* Top Pointer Indicator Arrow pointing at top center of wheel */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-40 pointer-events-none">
+                    <div className="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[28px] border-t-orange-600 drop-shadow-md"></div>
+                </div>
+
                 {/* Wheel Background */}
                 <div
-                    className="relative w-full h-full rounded-full overflow-hidden md:border-8 lg:border-14 border-[#FFDCC3] z-10"
+                    className="relative w-full h-full rounded-full overflow-hidden border-8 md:border-12 border-[#FFDCC3] shadow-2xl z-10"
                     style={{
                         background:
                             "linear-gradient(90deg, rgba(255, 103, 0, 0.1), rgba(251, 47, 53, 0.1) 100%)",
                     }}
                 >
                     {/* Spinning Wheel */}
-                    <div className="absolute inset-0" style={wheelStyle}>
-                        {data?.map((segment, index) => (
-                            <div
-                                key={index}
-                                className="absolute inset-0 origin-center"
-                                style={{ transform: `rotate(${index * SEGMENT_ANGLE}deg)` }}
-                            >
-                                {/* Colored segment */}
-                                <div
-                                    className="absolute inset-0"
-                                    style={{
-                                        background: `conic-gradient(${segment.color} 0deg ${SEGMENT_ANGLE}deg, transparent ${SEGMENT_ANGLE}deg 360deg)`,
-                                        clipPath: "circle(50% at 50% 50%)",
-                                    }}
-                                ></div>
+                    <div className="absolute inset-0 w-full h-full rounded-full overflow-hidden" style={wheelStyle}>
+                        {data.map((segment, index) => {
+                            const angle = index * SEGMENT_ANGLE;
+                            const centerAngle = angle + SEGMENT_ANGLE / 2;
 
-                                {/* Image & Label */}
-                                <div
-                                    className="absolute sm:top-52 top-40 sm:right-56 2xs:right-45 3xs:right-42 right-42 md:right-1/2 md:top-1/2 flex flex-col items-center"
-                                    style={{
-                                        transform: `rotate(${SEGMENT_ANGLE / 2 + 2}deg)
-                                                    translateY(${-translateYValue}px)
-                                                    rotate(-${index * SEGMENT_ANGLE + SEGMENT_ANGLE / 2}deg)
-                                                    rotate(-${rotation + 2}deg)`,
-                                    }}
-                                >
-                                    <img
-                                        src={segment?.image}
-                                        alt={segment?.option}
-                                        className="w-10 h-10 md:w-16 md:h-16 lg:w-16 lg:h-16 object-contain rounded-lg mb-2"
+                            return (
+                                <div key={index}>
+                                    {/* Colored segment slice */}
+                                    <div
+                                        className="absolute inset-0 origin-center"
+                                        style={{
+                                            transform: `rotate(${angle}deg)`,
+                                            background: `conic-gradient(${segment.color} 0deg ${SEGMENT_ANGLE}deg, transparent ${SEGMENT_ANGLE}deg 360deg)`,
+                                            clipPath: "circle(50% at 50% 50%)",
+                                        }}
                                     />
-                                    <span
-                                        className="text-xs sm:text-sm font-bold"
-                                        style={{ color: segment.textColor }}
-                                    >
-                                        {segment?.option}
-                                    </span>
-                                </div>
 
-                            </div>
-                        ))}
+                                    {/* Image & Label container centered in slice */}
+                                    <div
+                                        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+                                        style={{
+                                            transform: `rotate(${centerAngle}deg) translateY(-34%) rotate(-${centerAngle}deg)`,
+                                        }}
+                                    >
+                                        <div className="flex flex-col items-center justify-center">
+                                            <img
+                                                src={segment.image}
+                                                alt={segment.option}
+                                                className="w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain drop-shadow-md mb-1"
+                                            />
+                                            <span
+                                                className="text-xs sm:text-sm font-extrabold tracking-wide drop-shadow-sm text-center"
+                                                style={{ color: segment.textColor }}
+                                            >
+                                                {segment.option}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
 
-                    {/* Center Logo */}
-                    <div className="absolute inset-0 flex items-center justify-center z-30">
+                    {/* Center Logo / Pointer Pin */}
+                    <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
                         <img
                             src={pointer}
                             alt="Pointer"
                             className="h-16 w-16 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 object-contain"
                         />
                     </div>
-
                 </div>
             </div>
 
@@ -201,7 +180,7 @@ const FoodWheel = ({ getValue }) => {
                 onClick={handleSpin}
                 disabled={mustSpin}
                 isLoading={mustSpin}
-                className="mt-5 lg:mt-12"
+                className="mt-5 lg:mt-10 px-8 py-3 text-lg"
             >
                 {mustSpin ? (
                     "Spinning..."
@@ -220,12 +199,12 @@ const FoodWheel = ({ getValue }) => {
             {prize && (
                 <motion.p
                     key={prize}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1.5 }}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1.2, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="mt-6 text-base lg:text-2xl font-bold text-orange-500"
+                    className="mt-6 text-lg lg:text-2xl font-black text-orange-600 bg-orange-100/70 border border-orange-300 px-6 py-2 rounded-full shadow-sm"
                 >
-                    {`You got: ${prize}`}
+                    🎉 You got: <span className="underline decoration-orange-500">{prize}</span>!
                 </motion.p>
             )}
         </div>
@@ -233,3 +212,4 @@ const FoodWheel = ({ getValue }) => {
 };
 
 export default FoodWheel;
+
