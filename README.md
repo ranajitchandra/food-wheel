@@ -1,4 +1,4 @@
-# React Food Wheel dynamic websi
+# React Food Wheel dynamic webs
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
